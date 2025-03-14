@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,12 +8,136 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #F0FFF0; /* 蜜瓜绿，作为背景 */
+        }
+        
+        .header, .navbar, .footer {
+            background-color: #90EE90; /* 嫩绿色 */
+        }
+        
+        .button, .highlight {
+            background-color: #98FB98; /* 淡绿色 */
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* 创建1:1的正方形比例 */
+            overflow: hidden;
+        }
+        
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保视频填充整个容器 */
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* 新增样式：使按钮居中居下 */
+        .focus-card, .podcast-card, .article-card {
+            position: relative;
+            padding-bottom: 60px; /* 为按钮留出空间 */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .focus-btn, .show-transcript, .view-article {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* 按钮宽度 */
+            text-align: center;
+        }
+        
+        /* 修改按钮颜色为深绿色 */
+        .btn {
+            background-color: #2E8B57; /* 海洋绿，深绿色 */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3CB371; /* 中绿色，悬停时稍微亮一点 */
+        }
+        
+        .section-intro {
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1.25em;
+            font-weight: 400;
+        }
+        
+        .podcast-intro {
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            color: #333;
+            font-size: 1.25em;
+            font-weight: 400;
+        }
+        
+        /* 其他可能需要左对齐的文本元素 */
+        .podcast-content p, .focus-card p, .article-card p, .bio-content p {
+            text-align: left;
+        }
+        
+        .section-title .subtitle {
+            font-size: 1.4em; /* 增大字体大小，从1.2em改为1.4em */
+            color: #2E8B57; /* 使用与按钮相同的深绿色 */
+            margin-top: 5px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        /* 导航菜单样式增强 */
+        #nav ul li a {
+            color: white; /* 确保文字为白色 */
+            font-weight: 600; /* 增加字体粗细 */
+            font-size: 1.1em; /* 增大字体大小 */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 添加轻微阴影增加可读性 */
+            padding: 10px 15px; /* 增加内边距 */
+            transition: all 0.3s ease; /* 平滑过渡效果 */
+        }
+        
+        #nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* 悬停时添加半透明背景 */
+            border-radius: 4px; /* 圆角边框 */
+        }
+        
+        #nav ul {
+            display: flex;
+            gap: 15px; /* 增加菜单项之间的间距 */
+        }
+        
+        /* 确保导航栏背景足够深，以提供足够的对比度 */
+        .header {
+            background-color: #2E8B57; /* 使用深绿色背景 */
+        }
+    </style>
 </head>
 <body>
-    <div class="language-toggle">
-        <button id="language-btn">中文 / English</button>
-    </div>
-
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">Yichen Ge</a>
@@ -42,7 +165,7 @@
     <section class="focus-areas" id="focus-areas">
         <div class="container">
             <div class="section-title">
-                <h2>Focus Areas</h2>
+                <h2>🎯 Focus Areas</h2>
             </div>
             <div class="focus-grid">
                 <div class="focus-card" data-modal="elderly-care">
@@ -75,50 +198,62 @@
 
     <section class="podcast-section" id="podcasts">
         <div class="container">
-            <h2>Podcast Series</h2>
+            <div class="section-title">
+                <h2>🎧 Podcast Series</h2>
+                <h3 class="subtitle">True story podcast | Family Ties, Healthier Lives</h3>
+            </div>
+            <div class="podcast-intro">
+                <p>The original podcast series <strong>Health Voices</strong> focuses on the real journey of Chinese youth to overcome the dilemma of addiction. With the support of their families, three teenagers successfully recorded their transformation process of quitting smoking, drinking and drug addiction. Three real interviews tell about the strength of family affection and self-awakening in difficulties, and convey the belief that "health changes life".</p>
+            </div>
             <div class="podcast-grid">
                 <!-- First podcast -->
                 <div class="podcast-card" data-transcript="1">
                     <div class="video-container">
-                        <video controls>
-                            <source src="videos/chinese-youth-e-cigarette-recovery.mp4" type="video/mp4">
-                            Your browser does not support video playback.
-                        </video>
+                        <iframe 
+                            src="https://www.youtube.com/embed/s3sVz7JNVmQ?modestbranding=1&showinfo=0&controls=1&rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                     <div class="podcast-content">
-                        <h3>Chinese youth e-cigarette recovery -- the power of the family</h3>
+                        <h3>Chinese Youth E-cigarette Recovery: The Power of the Family</h3>
                         <p>Exploring the issue of e-cigarette use among Chinese teenagers through the personal journey of a Shanghai teenager named Xiao Jie in overcoming his dependence on e-cigarettes.</p>
-                        <button class="btn show-transcript">Show Detail Transcript</button>
+                        <button class="btn show-transcript">View Detail</button>
                     </div>
                 </div>
 
                 <!-- Second podcast -->
                 <div class="podcast-card" data-transcript="2">
                     <div class="video-container">
-                        <video controls>
-                            <source src="videos/recovery-of-alcohol-dependence.mp4" type="video/mp4">
-                            Your browser does not support video playback.
-                        </video>
+                        <iframe 
+                            src="https://www.youtube.com/embed/V745xkMCM2w?modestbranding=1&showinfo=0&controls=1&rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                     <div class="podcast-content">
                         <h3>Recovery of alcohol dependence among Chinese adolescents: The road to family rebirth</h3>
                         <p>Exploring the issue of underage drinking in China through the real-life recovery story of a young man named Li Yang, highlighting the pivotal role of family support.</p>
-                        <button class="btn show-transcript">Show Detail Transcript</button>
+                        <button class="btn show-transcript">View Detail</button>
                     </div>
                 </div>
 
                 <!-- Third podcast -->
                 <div class="podcast-card" data-transcript="3">
                     <div class="video-container">
-                        <video controls>
-                            <source src="videos/melodies-of-recovery.mp4" type="video/mp4">
-                            Your browser does not support video playback.
-                        </video>
+                        <iframe 
+                            src="https://www.youtube.com/embed/MNDwKNNCtGg?modestbranding=1&showinfo=0&controls=1&rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                     <div class="podcast-content">
                         <h3>Melodies of Recovery: Family Stories of Teenage Drug Rehabilitation in China</h3>
                         <p>Addressing the issue of drug abuse among Chinese teenagers through the case of a 17-year-old high school student named Liu Yu and the crucial role of family support.</p>
-                        <button class="btn show-transcript">Show Detail Transcript</button>
+                        <button class="btn show-transcript">View Detail</button>
                     </div>
                 </div>
             </div>
@@ -128,7 +263,11 @@
     <section class="articles-section" id="articles">
         <div class="container">
             <div class="section-title">
-                <h2>Featured Articles</h2>
+                <h2>📝 Featured Articles</h2>
+                <h3 class="subtitle">Bridging Generations, Transforming Communities</h3>
+            </div>
+            <div class="podcast-intro">
+                <p>Articles cover diverse social issues, such as intergenerational connection, youth e-cigarette awareness, corporate wellness, family communication, digital literacy for the elderly, and mental health destigmatization.</p>
             </div>
             <div class="articles-grid">
                 <!-- Article 1: Intergenerational Connection Workshop -->
@@ -204,7 +343,7 @@
         </div>
     </section>
 
-    <section class="about-me-section" id="about-me">
+    <section class="about-me-section" id="about-me" style="background-color: #D5F5E3;">
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
