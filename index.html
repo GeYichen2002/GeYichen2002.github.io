@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yichen Ge | Health Media Influencer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="language-toggle">
+        <button id="language-btn">中文 / English</button>
+    </div>
+
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Yichen Ge</a>
+            <button class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#focus-areas">Focus Areas</a></li>
+                    <li><a href="#podcasts">Podcasts</a></li>
+                    <li><a href="#articles">Featured Articles</a></li>
+                    <li><a href="#about-me">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Health Communication for Generations</h1>
+            <p>Addressing family health challenges in Chinese society through innovative media strategies</p>
+        </div>
+    </section>
+
+    <section class="focus-areas" id="focus-areas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Focus Areas</h2>
+            </div>
+            <div class="focus-grid">
+                <div class="focus-card" data-modal="elderly-care">
+                    <div class="focus-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Elderly Care</h3>
+                    <p>Addressing the challenges of aging populations in modern China, promoting intergenerational support systems and mental health awareness for older adults.</p>
+                    <button class="btn focus-btn">Learn More</button>
+                </div>
+                <div class="focus-card" data-modal="middle-age">
+                    <div class="focus-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>Middle-aged Substance Use</h3>
+                    <p>Creating awareness and intervention strategies for alcohol and tobacco addiction in middle-aged adults, with focus on family-based recovery approaches.</p>
+                    <button class="btn focus-btn">Learn More</button>
+                </div>
+                <div class="focus-card" data-modal="youth-vaping">
+                    <div class="focus-icon">
+                        <i class="fas fa-smoking"></i>
+                    </div>
+                    <h3>Youth E-cigarette & Drug Prevention</h3>
+                    <p>Developing effective communication strategies to combat vaping and drug use among Chinese youth, educating parents and schools about prevention.</p>
+                    <button class="btn focus-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="podcast-section" id="podcasts">
+        <div class="container">
+            <h2>Podcast Series</h2>
+            <div class="podcast-grid">
+                <!-- First podcast -->
+                <div class="podcast-card" data-transcript="1">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="videos/chinese-youth-e-cigarette-recovery.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Chinese youth e-cigarette recovery -- the power of the family</h3>
+                        <p>Exploring the issue of e-cigarette use among Chinese teenagers through the personal journey of a Shanghai teenager named Xiao Jie in overcoming his dependence on e-cigarettes.</p>
+                        <button class="btn show-transcript">Show Detail Transcript</button>
+                    </div>
+                </div>
+
+                <!-- Second podcast -->
+                <div class="podcast-card" data-transcript="2">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="videos/recovery-of-alcohol-dependence.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Recovery of alcohol dependence among Chinese adolescents: The road to family rebirth</h3>
+                        <p>Exploring the issue of underage drinking in China through the real-life recovery story of a young man named Li Yang, highlighting the pivotal role of family support.</p>
+                        <button class="btn show-transcript">Show Detail Transcript</button>
+                    </div>
+                </div>
+
+                <!-- Third podcast -->
+                <div class="podcast-card" data-transcript="3">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="videos/melodies-of-recovery.mp4" type="video/mp4">
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+                    <div class="podcast-content">
+                        <h3>Melodies of Recovery: Family Stories of Teenage Drug Rehabilitation in China</h3>
+                        <p>Addressing the issue of drug abuse among Chinese teenagers through the case of a 17-year-old high school student named Liu Yu and the crucial role of family support.</p>
+                        <button class="btn show-transcript">Show Detail Transcript</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="articles-section" id="articles">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Articles</h2>
+            </div>
+            <div class="articles-grid">
+                <!-- Article 1: Intergenerational Connection Workshop -->
+                <div class="article-card" data-article="1">
+                    <div class="article-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Bridging the Generation Gap</h3>
+                    <p>Workshop connects seniors and youth in Beijing, addressing social isolation through meaningful intergenerational activities and structured storytelling sessions.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+                
+                <!-- Article 2: E-cigarette Awareness Campaign -->
+                <div class="article-card" data-article="2">
+                    <div class="article-icon">
+                        <i class="fas fa-smoking-ban"></i>
+                    </div>
+                    <h3>Youth-Led Campaign Takes on Vaping Crisis</h3>
+                    <p>The "Behind the Cloud" initiative features teenagers who have experienced vaping educating their peers through relatable stories and demonstrations.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+                
+                <!-- Article 3: Corporate Wellness Program -->
+                <div class="article-card" data-article="3">
+                    <div class="article-icon">
+                        <i class="fas fa-glass-cheers"></i>
+                    </div>
+                    <h3>Breaking the Business Drinking Culture</h3>
+                    <p>The "Beyond the Toast" program addresses entrenched drinking culture by providing alternatives that maintain relationship-building without health consequences.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+                
+                <!-- Article 4: Family Communication Tools Workshop -->
+                <div class="article-card" data-article="4">
+                    <div class="article-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Breaking Silence: Family Communication Workshops</h3>
+                    <p>Workshops teach practical techniques for discussing sensitive health issues across generations, integrating traditional Chinese values with modern communication science.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+                
+                <!-- Article 5: Digital Literacy Program -->
+                <div class="article-card" data-article="5">
+                    <div class="article-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>Bridging Digital Divides for Elderly</h3>
+                    <p>The "Connected Generations" program pairs elderly participants with young volunteers for training on video calling and messaging to maintain family connections.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+                
+                <!-- Article 6: Mental Health Destigmatization Campaign -->
+                <div class="article-card" data-article="6">
+                    <div class="article-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Breaking the Silence on Youth Mental Health</h3>
+                    <p>The "Speak Up" campaign features authentic stories from teenagers who have faced mental health challenges, aiming to normalize conversations about psychological wellbeing.</p>
+                    <button class="btn view-article">View Detail</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="mission-content">
+                <p class="mission-quote quote">"My mission is to bridge generational health gaps through media that educates, connects, and inspires action."</p>
+                <p>Through my work as a health communicator and social media influencer, I strive to address the unique health challenges facing different generations in Chinese society. By creating accessible, engaging content that speaks to cultural contexts and family dynamics, I aim to foster healthier communities and stronger support systems.</p>
+                <p>My approach combines rigorous research with compelling storytelling, allowing complex health information to reach diverse audiences in formats they can understand and apply to their lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me-section" id="about-me">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            
+            <div class="about-container">
+                <div class="profile-image">
+                    <img src="images/profile_new.jpg" alt="Yichen Ge">
+                </div>
+                <div class="bio-content">
+                    <h3>Yichen Ge</h3>
+                    <p class="subtitle">Health Communication Specialist & Media Producer</p>
+                    
+                    <p>I am a dedicated health media specialist with a passion for addressing intergenerational health challenges through innovative communication strategies. With expertise spanning digital storytelling, community engagement, and family-centered health initiatives, I work to bridge communication gaps and promote wellbeing across age groups in Chinese society.</p>
+                    
+                    <p>My professional journey includes impactful roles at leading organizations including Xiaohongshu (Little Red Book), where I developed content strategies that increased engagement in family health communities by 24%. At People's Daily, I managed content for government health departments and led initiatives integrating traditional Chinese wellness concepts with modern health practices. My work with Blue Boat Family Therapy Studio has allowed me to translate complex psychological concepts into accessible media that strengthens family communication.</p>
+                    
+                    <p>Through targeted initiatives like the "Behind the Cloud" youth vaping prevention campaign, "Beyond the Toast" workplace wellness program, and "Connected Generations" digital literacy series, I've demonstrated how culturally-sensitive media can transform health behaviors. My approach combines rigorous research with compelling storytelling, making complex health information accessible to diverse audiences.</p>
+                    
+                    <div class="bio-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years of Media Experience</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Major Health Campaigns</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">250K+</div>
+                            <div class="stat-label">Social Media Engagement</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="#focus-areas">Focus Areas</a></li>
+                        <li><a href="#podcasts">Podcasts</a></li>
+                        <li><a href="#articles">Featured Articles</a></li>
+                        <li><a href="#about-me">About Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: emily.green081577@gmail.com</li>
+                        <li>WeChat: YichenGe_Health</li>
+                        <li>LinkedIn: Yichen Ge</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Yichen Ge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Templates -->
+    <div class="modal" id="elderly-care-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Elderly Care: Addressing the Challenges of Aging in Modern China</h2>
+            <div class="modal-body">
+                <div class="transcript-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="middle-age-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Middle-aged Substance Use: Breaking the Silence on Workplace Drinking Culture</h2>
+            <div class="modal-body">
+                <div class="transcript-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="youth-vaping-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Youth E-cigarette & Drug Prevention: Innovative Approaches for the Digital Generation</h2>
+            <div class="modal-body">
+                <div class="transcript-content">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/articles.js"></script>
+    <script src="js/transcripts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
