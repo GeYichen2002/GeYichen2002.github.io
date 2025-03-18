@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,139 +6,25 @@
     <title>Yichen Ge | Health Media Influencer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            background-color: #F0FFF0; /* 蜜瓜绿，作为背景 */
-        }
-        
-        .header, .navbar, .footer {
-            background-color: #90EE90; /* 嫩绿色 */
-        }
-        
-        .button, .highlight {
-            background-color: #98FB98; /* 淡绿色 */
-        }
-        
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%; /* 创建1:1的正方形比例 */
-            overflow: hidden;
-        }
-        
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 确保视频填充整个容器 */
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        
-        /* 新增样式：使按钮居中居下 */
-        .focus-card, .podcast-card, .article-card {
-            position: relative;
-            padding-bottom: 60px; /* 为按钮留出空间 */
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .focus-btn, .show-transcript, .view-article {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%; /* 按钮宽度 */
-            text-align: center;
-        }
-        
-        /* 修改按钮颜色为深绿色 */
-        .btn {
-            background-color: #2E8B57; /* 海洋绿，深绿色 */
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #3CB371; /* 中绿色，悬停时稍微亮一点 */
-        }
-        
-        .section-intro {
-            text-align: left;
-            max-width: 80%;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-            color: #333;
-            font-size: 1.25em;
-            font-weight: 400;
-        }
-        
-        .podcast-intro {
-            text-align: left;
-            max-width: 80%;
-            margin: 0 auto 30px;
-            line-height: 1.6;
-            color: #333;
-            font-size: 1.25em;
-            font-weight: 400;
-        }
-        
-        /* 其他可能需要左对齐的文本元素 */
-        .podcast-content p, .focus-card p, .article-card p, .bio-content p {
-            text-align: left;
-        }
-        
-        .section-title .subtitle {
-            font-size: 1.4em; /* 增大字体大小，从1.2em改为1.4em */
-            color: #2E8B57; /* 使用与按钮相同的深绿色 */
-            margin-top: 5px;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-        
-        /* 导航菜单样式增强 */
-        #nav ul li a {
-            color: white; /* 确保文字为白色 */
-            font-weight: 600; /* 增加字体粗细 */
-            font-size: 1.1em; /* 增大字体大小 */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* 添加轻微阴影增加可读性 */
-            padding: 10px 15px; /* 增加内边距 */
-            transition: all 0.3s ease; /* 平滑过渡效果 */
-        }
-        
-        #nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* 悬停时添加半透明背景 */
-            border-radius: 4px; /* 圆角边框 */
-        }
-        
-        #nav ul {
-            display: flex;
-            gap: 15px; /* 增加菜单项之间的间距 */
-        }
-        
-        /* 确保导航栏背景足够深，以提供足够的对比度 */
-        .header {
-            background-color: #2E8B57; /* 使用深绿色背景 */
-        }
-    </style>
+    <link rel="stylesheet" href="css/compact-modal.css">
 </head>
 <body>
+    <div class="language-toggle">
+        <button id="language-btn">中文 / English</button>
+    </div>
+
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="/Users/mac/Desktop/website2/music/music web/music web.MP3" type="audio/mpeg">
+        </audio>
+        <button id="music-toggle" class="music-toggle">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">Yichen Ge</a>
@@ -146,9 +33,12 @@
             </button>
             <nav id="nav">
                 <ul>
-                    <li><a href="#focus-areas">Focus Areas</a></li>
+                    <li><a href="#focus-areas">Focus</a></li>
                     <li><a href="#podcasts">Podcasts</a></li>
-                    <li><a href="#articles">Featured Articles</a></li>
+                    <li><a href="#articles">Articles</a></li>
+                    <li><a href="#posters">Posters</a></li>
+                    <li><a href="#illustrations">Illustrations</a></li>
+                    <li><a href="#mission">Mission</a></li>
                     <li><a href="#about-me">About Me</a></li>
                 </ul>
             </nav>
@@ -200,60 +90,45 @@
         <div class="container">
             <div class="section-title">
                 <h2>🎧 Podcast Series</h2>
-                <h3 class="subtitle">True story podcast | Family Ties, Healthier Lives</h3>
             </div>
-            <div class="podcast-intro">
+            <div class="podcast-subtitle">
+                <h3>True story podcast | Family Ties, Healthier Lives</h3>
                 <p>The original podcast series <strong>Health Voices</strong> focuses on the real journey of Chinese youth to overcome the dilemma of addiction. With the support of their families, three teenagers successfully recorded their transformation process of quitting smoking, drinking and drug addiction. Three real interviews tell about the strength of family affection and self-awakening in difficulties, and convey the belief that "health changes life".</p>
             </div>
             <div class="podcast-grid">
                 <!-- First podcast -->
                 <div class="podcast-card" data-transcript="1">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/s3sVz7JNVmQ?modestbranding=1&showinfo=0&controls=1&rel=0" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/s3sVz7JNVmQ?start=125" title="Chinese youth e-cigarette recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="podcast-content">
-                        <h3>Chinese Youth E-cigarette Recovery: The Power of the Family</h3>
+                        <h3><span class="emoji-icon">🚬</span>Chinese Youth E-cigarette Recovery: The Power of the Family</h3>
                         <p>Exploring the issue of e-cigarette use among Chinese teenagers through the personal journey of a Shanghai teenager named Xiao Jie in overcoming his dependence on e-cigarettes.</p>
-                        <button class="btn show-transcript">View Detail</button>
+                        <button class="btn show-transcript">Learn More</button>
                     </div>
                 </div>
 
                 <!-- Second podcast -->
                 <div class="podcast-card" data-transcript="2">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/V745xkMCM2w?modestbranding=1&showinfo=0&controls=1&rel=0" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/V745xkMCM2w" title="Recovery of alcohol dependence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="podcast-content">
-                        <h3>Recovery of alcohol dependence among Chinese adolescents: The road to family rebirth</h3>
+                        <h3><span class="emoji-icon">🍷</span>Recovery of alcohol dependence among Chinese adolescents: The road to family rebirth</h3>
                         <p>Exploring the issue of underage drinking in China through the real-life recovery story of a young man named Li Yang, highlighting the pivotal role of family support.</p>
-                        <button class="btn show-transcript">View Detail</button>
+                        <button class="btn show-transcript">Learn More</button>
                     </div>
                 </div>
 
                 <!-- Third podcast -->
                 <div class="podcast-card" data-transcript="3">
                     <div class="video-container">
-                        <iframe 
-                            src="https://www.youtube.com/embed/MNDwKNNCtGg?modestbranding=1&showinfo=0&controls=1&rel=0" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                        <iframe src="https://www.youtube.com/embed/MNDwKNNCtGg" title="Melodies of Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="podcast-content">
-                        <h3>Melodies of Recovery: Family Stories of Teenage Drug Rehabilitation in China</h3>
+                        <h3><span class="emoji-icon">💉</span>Melodies of Recovery: Family Stories of Teenage Drug Rehabilitation in China</h3>
                         <p>Addressing the issue of drug abuse among Chinese teenagers through the case of a 17-year-old high school student named Liu Yu and the crucial role of family support.</p>
-                        <button class="btn show-transcript">View Detail</button>
+                        <button class="btn show-transcript">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -264,9 +139,9 @@
         <div class="container">
             <div class="section-title">
                 <h2>📝 Featured Articles</h2>
-                <h3 class="subtitle">Bridging Generations, Transforming Communities</h3>
             </div>
-            <div class="podcast-intro">
+            <div class="article-subtitle">
+                <h3>Bridging Generations, Transforming Communities</h3>
                 <p>Articles cover diverse social issues, such as intergenerational connection, youth e-cigarette awareness, corporate wellness, family communication, digital literacy for the elderly, and mental health destigmatization.</p>
             </div>
             <div class="articles-grid">
@@ -333,17 +208,106 @@
         </div>
     </section>
 
+    <section class="posters-section" id="posters">
+        <div class="container">
+            <div class="section-title">
+                <h2>🌱 Wechat Posters</h2>
+            </div>
+            <div class="poster-subtitle">
+                <h3>Seasonal Health Guide | Traditional Wisdom and Modern Science</h3>
+                <p>This is a series of WeChat posters and text tweets created for institutions such as People's Daily Online and the National Healthcare Security Administration. Taking the 24 solar terms as the thread, it integrates the wisdom of traditional Chinese medicine health preservation and evidence - based medical knowledge. Using visual design to create the "health code in time", it breathes contemporary vitality into traditional culture.</p>
+            </div>
+            <div class="posters-grid">
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/1夏至.webp" alt="Summer Solstice Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/2大暑.webp" alt="Great Heat Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/3立秋.webp" alt="Beginning of Autumn Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/4处暑.webp" alt="End of Heat Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/5秋分.webp" alt="Autumnal Equinox Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/6谷雨.webp" alt="Grain Rain Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/7立春.jpg" alt="Beginning of Spring Health Guide">
+                </div>
+                <div class="poster-item">
+                    <img src="poster pic/poster封面/8冬至.jpg" alt="Winter Solstice Health Guide">
+                </div>
+            </div>
+            <a href="poster.html" class="poster-view-btn">View Detail</a>
+        </div>
+    </section>
+
+    <section class="illustration-section" id="illustrations">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎨 Original Illustrations</h2>
+            </div>
+            <div class="illustration-subtitle">
+                <h3>Visual Narratives: Bridging Gaps and Building Bonds</h3>
+                <p>Welcome to my original illustration corner! Here, four unique artworks await you. These illustrations are born from stories of bridging gaps - whether it's the generation gap, the digital divide, or the silence around mental health. Drawn from real-world projects, each drawing is a testament to the power of visual storytelling, aiming to inspire thoughts about building stronger relationships, enhancing communication, and embracing well-being.</p>
+            </div>
+            <div class="illustrations-grid">
+                <div class="illustration-item">
+                    <img src="illustration/1illustration.png" alt="Illustration 1">
+                    <div class="overlay">
+                        <h3>Generation Connection</h3>
+                        <p data-first-line="Bridge the generation gap" data-second-line="embrace inter-generational harmony!"></p>
+                    </div>
+                </div>
+                <div class="illustration-item">
+                    <img src="illustration/4illustration.png" alt="Illustration 2">
+                    <div class="overlay">
+                        <h3>Family Health Talk</h3>
+                        <p data-first-line="Break the silence on health" data-second-line="build a healthier family bond!"></p>
+                    </div>
+                </div>
+                <div class="illustration-item">
+                    <img src="illustration/5illustration.png" alt="Illustration 3">
+                    <div class="overlay">
+                        <h3>Seniors Digital Embrace</h3>
+                        <p data-first-line="Bridge the digital gap" data-second-line="warm the hearts of the aged!"></p>
+                    </div>
+                </div>
+                <div class="illustration-item">
+                    <img src="illustration/6illustration.png" alt="Illustration 4">
+                    <div class="overlay">
+                        <h3>Light Up Teen Lives</h3>
+                        <p data-first-line="Break the mental health silence" data-second-line="light up teen lives!"></p>
+                    </div>
+                </div>
+            </div>
+            <a href="illustration.html" class="illustration-view-btn">View Detail</a>
+        </div>
+    </section>
+
     <section class="mission" id="mission">
         <div class="container">
             <div class="mission-content">
-                <p class="mission-quote quote">"My mission is to bridge generational health gaps through media that educates, connects, and inspires action."</p>
-                <p>Through my work as a health communicator and social media influencer, I strive to address the unique health challenges facing different generations in Chinese society. By creating accessible, engaging content that speaks to cultural contexts and family dynamics, I aim to foster healthier communities and stronger support systems.</p>
-                <p>My approach combines rigorous research with compelling storytelling, allowing complex health information to reach diverse audiences in formats they can understand and apply to their lives.</p>
+                <div class="mission-flex">
+                    <div class="mission-text">
+                        <p class="mission-quote quote">"My mission is to bridge generational health gaps through media that educates, connects, and inspires action."</p>
+                        <p>Through my work as a health communicator and social media influencer, I strive to address the unique health challenges facing different generations in Chinese society. By creating accessible, engaging content that speaks to cultural contexts and family dynamics, I aim to foster healthier communities and stronger support systems.</p>
+                        <p>My approach combines rigorous research with compelling storytelling, allowing complex health information to reach diverse audiences in formats they can understand and apply to their lives.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="images/WechatIMG55192.jpg" alt="Health Communication Mission">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="about-me-section" id="about-me" style="background-color: #D5F5E3;">
+    <section class="about-me-section" id="about-me">
         <div class="container">
             <div class="section-title">
                 <h2>About Me</h2>
@@ -388,9 +352,12 @@
                 <div class="footer-col">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="#focus-areas">Focus Areas</a></li>
+                        <li><a href="#focus-areas">Focus</a></li>
                         <li><a href="#podcasts">Podcasts</a></li>
-                        <li><a href="#articles">Featured Articles</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#posters">Posters</a></li>
+                        <li><a href="#illustrations">Illustrations</a></li>
+                        <li><a href="#mission">Mission</a></li>
                         <li><a href="#about-me">About Me</a></li>
                     </ul>
                 </div>
@@ -403,13 +370,11 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Connect</h3>
+                    <h3>Welcome To My Channel</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-weixin"></i></a>
-                        <a href="#"><i class="fab fa-weibo"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/channel/UC0n5mp4sW5zsBHspnomVh2Q" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
+                    <p class="studio-name">HealthStory Studio</p>
                 </div>
             </div>
             <div class="copyright">
@@ -422,7 +387,10 @@
     <div class="modal" id="elderly-care-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Elderly Care: Addressing the Challenges of Aging in Modern China</h2>
+            <h2>
+                <i class="fas fa-user-friends"></i>
+                <span>Elderly Care</span>
+            </h2>
             <div class="modal-body">
                 <div class="transcript-content">
                     <!-- Content will be loaded dynamically -->
@@ -434,7 +402,10 @@
     <div class="modal" id="middle-age-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Middle-aged Substance Use: Breaking the Silence on Workplace Drinking Culture</h2>
+            <h2>
+                <i class="fas fa-wine-bottle"></i>
+                <span>Middle-aged Substance Use</span>
+            </h2>
             <div class="modal-body">
                 <div class="transcript-content">
                     <!-- Content will be loaded dynamically -->
@@ -446,7 +417,10 @@
     <div class="modal" id="youth-vaping-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2>Youth E-cigarette & Drug Prevention: Innovative Approaches for the Digital Generation</h2>
+            <h2>
+                <i class="fas fa-smoking"></i>
+                <span>Youth E-cigarette & Drug Prevention</span>
+            </h2>
             <div class="modal-body">
                 <div class="transcript-content">
                     <!-- Content will be loaded dynamically -->

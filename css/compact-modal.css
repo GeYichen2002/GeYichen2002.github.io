@@ -1,0 +1,109 @@
+/* 紧凑模态框样式 */
+.modal h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.modal h2 i {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.modal h2 span {
+    display: block;
+}
+
+.modal-content {
+    padding: 15px;
+}
+
+.modal-content section {
+    margin-bottom: 15px;
+}
+
+.modal-content h3 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.modal-content p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.modal-content ul, 
+.modal-content ol {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+
+.modal-content li {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* 图标样式 */
+.modal-content h3 i {
+    margin-right: 8px;
+    color: #0078d4;
+}
+
+/* 返回首页按钮样式 */
+.back-to-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4D972C;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-to-home:hover {
+    background-color: #3a7521;
+    text-decoration: none;
+    color: white;
+}
+
+.back-to-home i {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 1rem;
+    }
+    
+    .modal h2 {
+        padding-top: 2.5rem;
+    }
+    
+    .modal h2 i {
+        font-size: 2rem;
+    }
+    
+    .transcript-content .section-intro,
+    .transcript-content .solutions-section,
+    .transcript-content .conclusion {
+        padding: 0.8rem;
+    }
+    
+    .transcript-content ul, 
+    .transcript-content ol {
+        padding: 0.8rem 0.8rem 0.8rem 2rem;
+    }
+} 

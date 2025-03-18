@@ -6,13 +6,20 @@
     <title>Podcast Transcript | Yichen Ge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Dancing+Script:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="language-toggle">
         <button id="language-btn">中文 / English</button>
+    </div>
+
+    <div class="music-player">
+        <div id="youtube-player"></div>
+        <div class="music-control">
+            <i class="fas fa-music" id="music-icon"></i>
+        </div>
     </div>
 
     <header id="header">
@@ -23,13 +30,13 @@
             </button>
             <nav id="nav">
                 <ul>
-                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#focus-areas">Focus</a></li>
                     <li><a href="index.html#podcasts">Podcasts</a></li>
                     <li><a href="index.html#articles">Articles</a></li>
-                    <li><a href="index.html#portfolio">Portfolio</a></li>
-                    <li><a href="index.html#impact">Impact</a></li>
-                    <li><a href="index.html#statement">Statement</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#posters">Posters</a></li>
+                    <li><a href="index.html#illustrations">Illustrations</a></li>
+                    <li><a href="index.html#mission">Mission</a></li>
+                    <li><a href="index.html#about-me">About Me</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,18 +49,101 @@
                 
                 <!-- 视频播放器 -->
                 <div class="video-container-transcript">
-                    <video controls id="podcast-video">
-                        <source src="" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
+                    <iframe id="transcript-video" width="100%" height="100%" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 
-                <!-- 预览内容 -->
-                <div class="transcript-preview" id="transcript-preview"></div>
+                <!-- 内容介绍卡片 -->
+                <div class="content-card">
+                    <p>This episode explores the story of Xiao Jie, a 15-year-old who overcame vaping addiction through dedicated family support. The narrative underscores the significance of non-judgmental communication, professional guidance, and structured interventions in adolescent recovery.</p>
+                    
+                    <div class="card-subtitle">Key Points:</div>
+                    <ul>
+                        <li>Xiao Jie began vaping at 14 due to peer pressure and misperceptions of safety</li>
+                        <li>Parents detected behavioral changes and chose <span class="highlight">empathy over confrontation</span></li>
+                        <li>Multi-pronged approach included counseling, school collaboration, hobby replacement, and open dialogue</li>
+                        <li>Recovery took one year with setbacks but consistent family encouragement</li>
+                    </ul>
+                    
+                    <p class="conclusion">The story demonstrates how proactive family engagement combined with professional resources can lead to sustainable recovery for teens struggling with substance use.</p>
+                </div>
                 
                 <!-- 完整文字记录 -->
                 <h2 class="full-transcript-title">Full Transcript</h2>
                 <div class="transcript-full" id="transcript-full"></div>
+                
+                <!-- Summary 板块 -->
+                <div class="summary-section">
+                    <h2>Summary</h2>
+                    <div class="summary-content">
+                        <div class="summary-item">
+                            <h3>Issue</h3>
+                            <p>Teen vaping in China is a growing problem, with over 10% of 15–18-year-olds having tried e-cigarettes (2022 survey). Nicotine addiction and irreversible brain/lung damage are major risks.</p>
+                        </div>
+                        <div class="summary-item">
+                            <h3>Case Study</h3>
+                            <p>Xiao Jie, a 15-year-old from Shanghai, started vaping due to peer pressure and became dependent. His parents responded with empathy, education, and support, helping him quit after a year.</p>
+                        </div>
+                        <div class="summary-item">
+                            <h3>Key Steps</h3>
+                            <ul>
+                                <li>Education: Understanding health risks.</li>
+                                <li>Open Dialogue: Non-judgmental conversations.</li>
+                                <li>Support Systems: Medical professionals, counselors, and family involvement.</li>
+                                <li>Quit Plans: Gradual goals and healthy habits (e.g., exercise).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights 板块 -->
+                <div class="insights-section">
+                    <h2>Insights</h2>
+                    <div class="insights-content">
+                        <div class="insight-item">
+                            <h3>Peer Pressure & Misinformation</h3>
+                            <p>Teens often start vaping to fit in, unaware of its dangers. Marketing falsely positions e-cigarettes as "safer" than traditional smoking.</p>
+                        </div>
+                        <div class="insight-item">
+                            <h3>Family Support Critical</h3>
+                            <p>Xiao Jie's parents' approach (empathy over punishment) was pivotal. Involving schools and medical experts have strengthened the support system.</p>
+                        </div>
+                        <div class="insight-item">
+                            <h3>Cycle of Addiction</h3>
+                            <p>Addiction begins casually but escalates quickly. Teens may hide habits due to shame or fear of judgment.</p>
+                        </div>
+                        <div class="insight-item">
+                            <h3>Long-Term Impact</h3>
+                            <p>Nicotine affects brain development, increasing risks of anxiety, depression, and lifelong addiction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggestion 板块 -->
+                <div class="suggestion-section">
+                    <h2>Suggestion</h2>
+                    <div class="suggestion-content">
+                        <div class="suggestion-item">
+                            <h3>Educate Yourself</h3>
+                            <p>Share facts about vaping risks (e.g., nicotine addiction, lung injuries) with teens.</p>
+                        </div>
+                        <div class="suggestion-item">
+                            <h3>Start Open Conversations</h3>
+                            <p>Ask questions like, "Why do you think friends vape?" to understand their perspective.</p>
+                        </div>
+                        <div class="suggestion-item">
+                            <h3>Normalize Support</h3>
+                            <p>Encourage seeking help from counselors or hotlines (e.g., China's National Health Commission resources).</p>
+                        </div>
+                        <div class="suggestion-item">
+                            <h3>Create Distractions</h3>
+                            <p>Replace vaping urges with activities like sports, hobbies, or family outings.</p>
+                        </div>
+                        <div class="suggestion-item">
+                            <h3>Advocate for Policy Change</h3>
+                            <p>Support stricter vaping regulations and school anti-addiction programs.</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- 返回按钮 -->
                 <a href="index.html#podcasts" class="back-button">Back to Podcasts</a>
@@ -67,11 +157,13 @@
                 <div class="footer-col">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="index.html#about">About Me</a></li>
+                        <li><a href="index.html#focus-areas">Focus</a></li>
                         <li><a href="index.html#podcasts">Podcasts</a></li>
                         <li><a href="index.html#articles">Articles</a></li>
-                        <li><a href="index.html#portfolio">Visual Portfolio</a></li>
-                        <li><a href="index.html#impact">Impact & Achievements</a></li>
+                        <li><a href="index.html#posters">Posters</a></li>
+                        <li><a href="index.html#illustrations">Illustrations</a></li>
+                        <li><a href="index.html#mission">Mission</a></li>
+                        <li><a href="index.html#about-me">About Me</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -99,6 +191,7 @@
     </footer>
 
     <script src="js/transcripts.js"></script>
+    <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 从 URL 参数获取文字记录 ID
@@ -111,33 +204,239 @@
                 // 设置标题
                 document.getElementById('transcript-title').textContent = transcript.title;
                 
-                // 设置预览内容
-                document.getElementById('transcript-preview').innerHTML = transcript.preview;
+                // 更新内容介绍卡片
+                if (transcriptId === '3') {
+                    // 如果是ID=3的页面，使用特定的内容和格式
+                    document.querySelector('.content-card').innerHTML = `
+                        <p>This episode chronicles the journey of Liu Yu, a 17-year-old who triumphed over drug addiction through his parents' steadfast support and strategic interventions. The narrative emphasizes the importance of parental empathy, professional rehabilitation, and community collaboration in adolescent recovery.</p>
+                        
+                        <div class="card-subtitle">Key Points:</div>
+                        <ul>
+                            <li>Liu Yu experimented with candy-like drugs at a party due to curiosity and peer influence</li>
+                            <li>Parents identified behavioral changes (excessive sleepiness, mood swings, secretive spending) and responded with <span class="highlight">non-confrontational dialogue</span></li>
+                            <li>Comprehensive recovery plan included:
+                                <ul style="margin-top: 8px; padding-left: 20px;">
+                                    <li>Professional rehabilitation and counseling</li>
+                                    <li>Parental leave to provide 24/7 care during withdrawal</li>
+                                    <li>School partnership for academic and psychological reintegration</li>
+                                    <li>Active engagement in anti-drug advocacy post-recovery</li>
+                                </ul>
+                            </li>
+                            <li>Overcame severe withdrawal symptoms and relapse temptations over 18 months</li>
+                        </ul>
+                        
+                        <p class="conclusion">The story illustrates how systemic family-school-professional collaboration can transform crisis into resilience, highlighting the transformative power of love and structure in combating adolescent substance abuse.</p>
+                    `;
+                    
+                    // 设置 Summary、Insights 和 Suggestion 部分
+                    document.querySelector('.summary-section').innerHTML = `
+                        <h2>Summary</h2>
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <h3>Issue</h3>
+                                <p>Teen drug abuse in China is rising, fueled by peer pressure and deceptive drug packaging (e.g., candy-like pills).</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Case Study</h3>
+                                <p>Liu Yu, 17, started using drugs at a party, leading to addiction, health decline, and academic struggles. His parents provided non-judgmental support, rehab, and school collaboration, helping him recover after a year.</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Key Steps</h3>
+                                <ul>
+                                    <li>Empathetic communication over blame.</li>
+                                    <li>Professional rehab and counseling.</li>
+                                    <li>Parental time-off and round-the-clock care.</li>
+                                    <li>School reintegration support.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.querySelector('.insights-section').innerHTML = `
+                        <h2>Insights</h2>
+                        <div class="insights-content">
+                            <div class="insight-item">
+                                <h3>Root Causes</h3>
+                                <p>Curiosity + peer influence = vulnerability to mislabeled drugs.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Family Role</h3>
+                                <p>Calm reactions and active involvement rebuild trust.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Addiction Challenges</h3>
+                                <p>Relapse risks from old social circles.</p>
+                                <p>Physical/mental trauma during withdrawal.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Outcome</h3>
+                                <p>Recovery strengthened family bonds; Liu Yu now advocates against drugs.</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.querySelector('.suggestion-section').innerHTML = `
+                        <h2>Suggestions</h2>
+                        <div class="suggestion-content">
+                            <div class="suggestion-item">
+                                <h3>Preventive Education</h3>
+                                <p>Teach teens to recognize disguised drugs and their consequences.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Open Dialogue</h3>
+                                <p>Role-play refusal strategies for peer pressure scenarios.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Early Detection</h3>
+                                <p>Monitor behavior/mood changes for signs of abuse.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Seek Help</h3>
+                                <p>Use rehab centers (e.g., China's National Anti-Drug hotlines).</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Community Advocacy</h3>
+                                <p>Push for stricter drug sales laws and school anti-addiction programs.</p>
+                            </div>
+                        </div>
+                    `;
+                } else if (transcriptId === '2') {
+                    // 酒精依赖页面内容 (ID=2)
+                    document.querySelector('.content-card').innerHTML = `
+                        <p>This episode tells the story of Li Yang, a teenager who overcame alcohol addiction with the support of his family. The story highlights the importance of understanding, communication, and professional help in the recovery process.</p>
+                        
+                        <div class="card-subtitle">Key Points:</div>
+                        <ul>
+                            <li>Li Yang started drinking at parties to cope with academic pressure</li>
+                            <li>His parents discovered his alcohol use and chose <span class="highlight">support rather than punish</span></li>
+                            <li>Family therapy and daily walks helped rebuild their relationship</li>
+                            <li>Li Yang now helps other teens avoid alcohol abuse</li>
+                        </ul>
+                        
+                        <p class="conclusion">The story shows how family love and patience can help teens overcome addiction.</p>
+                    `;
+                    
+                    // 设置 Summary、Insights 和 Suggestion 部分
+                    document.querySelector('.summary-section').innerHTML = `
+                        <h2>Summary</h2>
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <h3>Issue</h3>
+                                <p>Teen alcohol abuse is a growing concern in China, with adolescents turning to alcohol to cope with academic pressure, peer influence, and emotional stress.</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Case Study</h3>
+                                <p>Li Yang, a once-high-achieving student, began drinking at parties to escape stress. His habit escalated into addiction, leading to academic decline and isolation. His parents responded with empathy, open communication, and professional support, helping him recover after a year of struggles.</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Key Steps</h3>
+                                <ul>
+                                    <li>Non-Punitive Approach: Parents avoided anger, focusing instead on understanding and dialogue.</li>
+                                    <li>Family Support: Daily walks, reduced social commitments, and involvement in his recovery.</li>
+                                    <li>Professional Help: Therapy addressed underlying mental health issues and taught healthier coping strategies.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.querySelector('.insights-section').innerHTML = `
+                        <h2>Insights</h2>
+                        <div class="insights-content">
+                            <div class="insight-item">
+                                <h3>Root Causes</h3>
+                                <p>Peer Pressure: Teens often drink to fit in, underestimating long-term risks.</p>
+                                <p>Escapism: Alcohol masks stress but worsens underlying issues like anxiety or academic burnout.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Family Dynamics</h3>
+                                <p>Open Communication: Parents' willingness to listen without judgment was critical.</p>
+                                <p>Active Involvement: Small gestures (e.g., daily walks) rebuilt trust and connection.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Addiction Cycle</h3>
+                                <p>Relapse is common, but parental patience and reminders of loved ones' pain can be transformative.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h3>Long-Term Impact</h3>
+                                <p>Alcohol abuse during adolescence disrupts brain development and increases risks of lifelong addiction.</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.querySelector('.suggestion-section').innerHTML = `
+                        <h2>Suggestions</h2>
+                        <div class="suggestion-content">
+                            <div class="suggestion-item">
+                                <h3>Preventive Education</h3>
+                                <p>Discuss alcohol risks early, emphasizing harm to brain health and academic performance.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Foster Open Dialogue</h3>
+                                <p>Ask teens about their stressors (e.g., "What pressures do you face at school?") to build trust.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Model Healthy Coping</h3>
+                                <p>Demonstrate stress management (e.g., exercise, meditation) and limit alcohol use at home.</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Support Resources</h3>
+                                <p>Connect teens to counselors or support groups (e.g., China's Adolescent Health Center hotlines).</p>
+                            </div>
+                            <div class="suggestion-item">
+                                <h3>Community Advocacy</h3>
+                                <p>Push for stricter alcohol sales regulations and school programs that teach resilience and emotional skills.</p>
+                            </div>
+                        </div>
+                    `;
+                } else if (transcriptId === '1') {
+                    // 电子烟成瘾页面内容 (ID=1)
+                    document.querySelector('.content-card').innerHTML = `
+                        <p>This episode explores the story of Xiao Jie, a 15-year-old who overcame vaping addiction through dedicated family support. The narrative underscores the significance of non-judgmental communication, professional guidance, and structured interventions in adolescent recovery.</p>
+                        
+                        <div class="card-subtitle">Key Points:</div>
+                        <ul>
+                            <li>Xiao Jie began vaping at 14 due to peer pressure and misperceptions of safety</li>
+                            <li>Parents detected behavioral changes and chose <span class="highlight">empathy over confrontation</span></li>
+                            <li>Multi-pronged approach included counseling, school collaboration, hobby replacement, and open dialogue</li>
+                            <li>Recovery took one year with setbacks but consistent family encouragement</li>
+                        </ul>
+                        
+                        <p class="conclusion">The story demonstrates how proactive family engagement combined with professional resources can lead to sustainable recovery for teens struggling with substance use.</p>
+                    `;
+                }
                 
                 // 设置完整文字记录
                 document.getElementById('transcript-full').innerHTML = transcript.transcript;
                 
+                // 应用对话气泡样式
+                setTimeout(function() {
+                    if (typeof processTranscriptText === 'function') {
+                        processTranscriptText();
+                    } else {
+                        console.error('processTranscriptText 函数未定义');
+                    }
+                }, 300);
+                
                 // 设置视频源
-                const videoElement = document.getElementById('podcast-video');
+                const videoElement = document.getElementById('transcript-video');
                 let videoSrc = '';
                 
                 // 根据 ID 设置对应的视频源
                 switch(transcriptId) {
                     case '1':
-                        videoSrc = 'videos/chinese-youth-e-cigarette-recovery.mp4';
+                        videoSrc = 'https://www.youtube.com/embed/s3sVz7JNVmQ?start=125';
                         break;
                     case '2':
-                        videoSrc = 'videos/recovery-of-alcohol-dependence.mp4';
+                        videoSrc = 'https://www.youtube.com/embed/V745xkMCM2w';
                         break;
                     case '3':
-                        videoSrc = 'videos/melodies-of-recovery.mp4';
+                        videoSrc = 'https://www.youtube.com/embed/MNDwKNNCtGg';
                         break;
                     default:
                         videoSrc = '';
                 }
                 
-                videoElement.querySelector('source').src = videoSrc;
-                videoElement.load(); // 重新加载视频
+                videoElement.src = videoSrc;
             }
         });
     </script>
