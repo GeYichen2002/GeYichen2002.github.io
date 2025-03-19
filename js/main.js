@@ -405,27 +405,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 // 根据文章ID设置不同的图片
                 switch(articleId) {
                     case '1':
-                        featuredImage.src = './article_pic/1.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/1.png';
+                        
                         featuredImage.alt = 'Elderly Care Workshop';
                         break;
                     case '2':
-                        featuredImage.src = './article_pic/2.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/2.png';
                         featuredImage.alt = 'Youth Vaping Prevention';
                         break;
                     case '3':
-                        featuredImage.src = './article_pic/3.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/3.png';
                         featuredImage.alt = 'Workplace Drinking Culture';
                         break;
                     case '4':
-                        featuredImage.src = './article_pic/4.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/4.png';
                         featuredImage.alt = 'Family Communication Workshop';
                         break;
                     case '5':
-                        featuredImage.src = './article_pic/5.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/5.png';
                         featuredImage.alt = 'Digital Literacy for Elderly';
                         break;
                     case '6':
-                        featuredImage.src = './article_pic/6.png';
+                        featuredImage.src = 'https://github.com/GeYichen2002/GeYichen2002.github.io/raw/master/article_pic/6.png';
                         featuredImage.alt = 'Youth Mental Health Campaign';
                         break;
                     default:
